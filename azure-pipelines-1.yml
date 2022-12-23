@@ -17,6 +17,12 @@ variables:
 steps:
 - task: NuGetToolInstaller@1
 
+- task: NexusIqPipelineTask@1
+  inputs:
+    nexusIqService: 'NexusIQConnection'
+    applicationId: 'SampleMvcWebApp__bcbarbosaSampleMvcWebApp'
+    stage: 'Build'
+
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
